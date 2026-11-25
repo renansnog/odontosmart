@@ -85,3 +85,6 @@ details { margin-top: 4px; }
 summary { color: #9b2a2a; cursor: pointer; }
 .aviso { background: #e5f3e9; border-left: 4px solid #2e7c45; padding: 10px 14px; }
 .erro { background: #fbeaea; border-color: #9b2a2a; color: #7d2020; }
+
+/* Identidade OdontoSmart */
+body{background:#f1f7f7;color:#17343d}.topo{background:#12343e}.marca{display:inline-flex;align-items:center;gap:10px}.botao,button{background:#087f83}.botao:hover,button:hover{background:#075e63}.sair{background:transparent}.perigo{background:#9b2a2a}.perigo:hover{background:#772020}a{color:#075e63}.cartao,.formulario,.tabela{border-color:#c9dfdf;border-radius:12px}.cartao:hover{border-color:#087f83}th{background:#e4f1f0}input:focus,select:focus,textarea:focus{outline:2px solid #087f83;outline-offset:2px}
