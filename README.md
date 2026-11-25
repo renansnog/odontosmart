@@ -83,3 +83,5 @@ A evidência é a execução local registrada pelo responsável. Não constitui 
 ## Identidade do projeto
 
 OdontoSmart é o novo nome do projeto originalmente desenvolvido como Clínica O’Blanco. O nome técnico do banco, a pasta e a URL do repositório permanecem inalterados para preservar a compatibilidade. A validação anterior antecede a mudança de marca; execute novamente a suíte após atualizar o projeto.
+
+Identidade visual: símbolo vetorial próprio, paleta azul-petróleo e verde-azulado, página de apresentação responsiva e painel administrativo integrado. A marca não foi pesquisada para fins de registro comercial.
