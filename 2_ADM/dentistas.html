@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %}Dentistas{% endblock %}
+{% block conteudo %}
+<h1>Dentistas</h1>
+<form class="formulario" method="post">
+  <h2>Novo dentista</h2>
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+  <label for="nome">Nome</label>
+  <input id="nome" name="nome" maxlength="100" value="{{ dados.get('nome', '') }}" required>
+  <label for="cro">CRO</label>
+  <input id="cro" name="cro" maxlength="30" value="{{ dados.get('cro', '') }}" required>
+  <div class="botoes"><button type="submit">Cadastrar dentista</button></div>
+</form>
+<div class="tabela">
+  <table>
+    <thead><tr><th scope="col">Nome</th><th scope="col">CRO</th></tr></thead>
+    <tbody>
+      {% for d in dentistas %}
+        <tr><td>{{ d.nome }}</td><td>{{ d.cro }}</td></tr>
+      {% else %}
+        <tr><td colspan="2">Nenhum dentista cadastrado.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block titulo %}Erro{% endblock %}
+{% block conteudo %}
+<h1>{{ mensagem }}</h1>
+<a href="{{ url_for('institucional') }}">Voltar ao site</a>
+{% endblock %}

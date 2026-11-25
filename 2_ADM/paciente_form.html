@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block titulo %}{{ 'Editar paciente' if cpf else 'Novo paciente' }}{% endblock %}
+{% block conteudo %}
+<h1>{{ 'Editar paciente' if cpf else 'Novo paciente' }}</h1>
+<form class="formulario" method="post">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+  <label for="nome">Nome</label>
+  <input id="nome" name="nome" maxlength="100" value="{{ dados.get('nome') or '' }}" required>
+  <label for="id_CPF">CPF (11 dígitos)</label>
+  <input id="id_CPF" name="id_CPF" inputmode="numeric" maxlength="14" value="{{ dados.get('id_CPF') or '' }}" required>
+  <label for="telefone">Telefone</label>
+  <input id="telefone" name="telefone" type="tel" maxlength="20" value="{{ dados.get('telefone') or '' }}">
+  <label for="endereco">Endereço</label>
+  <input id="endereco" name="endereco" maxlength="255" value="{{ dados.get('endereco') or '' }}">
+  <label for="data_de_nascimento">Data de nascimento</label>
+  <input id="data_de_nascimento" name="data_de_nascimento" type="date" value="{{ dados.get('data_de_nascimento') or '' }}">
+  <label for="pcd">Pessoa com deficiência (PCD)</label>
+  <select id="pcd" name="pcd">
+    <option value="Não">Não</option>
+    <option value="Sim"{% if dados.get('pcd') == 'Sim' %} selected{% endif %}>Sim</option>
+  </select>
+  <div class="botoes">
+    <button type="submit">Salvar paciente</button>
+    <a href="{{ url_for('gestao.pacientes') }}">Voltar</a>
+  </div>
+</form>
+{% endblock %}

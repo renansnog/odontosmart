@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}Painel administrativo{% endblock %}
+{% block conteudo %}
+<h1>Painel administrativo</h1>
+<p class="subtitulo">Olá, {{ g.admin.nome or g.admin.username }}.</p>
+<div class="indicadores">
+  <a class="cartao" href="{{ url_for('gestao.pacientes') }}">
+    <span>Pacientes cadastrados</span><strong>{{ totais.pacientes }}</strong>
+  </a>
+  <a class="cartao" href="{{ url_for('gestao.consultas') }}">
+    <span>Consultas agendadas</span><strong>{{ totais.consultas }}</strong>
+  </a>
+  <a class="cartao" href="{{ url_for('gestao.dentistas') }}">
+    <span>Dentistas cadastrados</span><strong>{{ totais.dentistas }}</strong>
+  </a>
+</div>
+{% endblock %}

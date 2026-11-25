@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block titulo %}Pacientes{% endblock %}
+{% block conteudo %}
+<div class="titulo-pagina">
+  <h1>Pacientes</h1>
+  <a class="botao" href="{{ url_for('gestao.paciente_form') }}">Novo paciente</a>
+</div>
+<form class="busca" method="get">
+  <label for="q">Buscar por nome ou CPF</label>
+  <div>
+    <input id="q" name="q" type="search" maxlength="100" value="{{ termo }}">
+    <button type="submit">Buscar</button>
+    {% if termo %}<a href="{{ url_for('gestao.pacientes') }}">Limpar</a>{% endif %}
+  </div>
+</form>
+<div class="tabela">
+  <table>
+    <thead><tr>
+      <th scope="col">Nome</th><th scope="col">CPF</th><th scope="col">Telefone</th>
+      <th scope="col">Nascimento</th><th scope="col">PCD</th><th scope="col">Ações</th>
+    </tr></thead>
+    <tbody>
+      {% for p in pacientes %}
+        <tr>
+          <td>{{ p.nome }}</td><td>{{ p.id_CPF }}</td><td>{{ p.telefone or '—' }}</td>
+          <td>{{ p.data_de_nascimento | data_br }}</td><td>{{ p.pcd or '—' }}</td>
+          <td class="acoes">
+            <a href="{{ url_for('gestao.paciente_form', cpf=p.id_CPF) }}">Editar</a>
+            <details>
+              <summary>Excluir</summary>
+              <form method="post" action="{{ url_for('gestao.excluir_paciente', cpf=p.id_CPF) }}">
+                <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+                <button type="submit" class="perigo">Confirmar exclusão</button>
+              </form>
+            </details>
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="6">Nenhum paciente encontrado.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

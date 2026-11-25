@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}{% endblock %} | Clínica O'Blanco</title>
+  <link rel="stylesheet" href="{{ url_for('css_admin', arquivo='admin.css') }}">
+  {% block estilos %}{% endblock %}
+</head>
+<body>
+  <header class="topo">
+    <div class="largura navegacao">
+      <a class="marca" href="{{ url_for('institucional') }}">O'Blanco Odontologia Moderna</a>
+      {% if g.admin %}
+      <nav aria-label="Administração">
+        <a href="{{ url_for('painel') }}">Painel</a>
+        <a href="{{ url_for('gestao.pacientes') }}">Pacientes</a>
+        <a href="{{ url_for('gestao.consultas') }}">Consultas</a>
+        <a href="{{ url_for('gestao.dentistas') }}">Dentistas</a>
+        <form method="post" action="{{ url_for('sair') }}">
+          <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+          <button class="sair" type="submit">Sair</button>
+        </form>
+      </nav>
+      {% endif %}
+    </div>
+  </header>
+  <main class="largura">
+    {% for categoria, mensagem in get_flashed_messages(with_categories=true) %}
+      <p role="status" class="aviso {{ categoria }}">{{ mensagem }}</p>
+    {% endfor %}
+    {% if erro %}<p role="alert" class="aviso erro">{{ erro }}</p>{% endif %}
+    {% block conteudo %}{% endblock %}
+  </main>
+</body>
+</html>

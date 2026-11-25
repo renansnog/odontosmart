@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block titulo %}{{ 'Editar consulta' if consulta_id else 'Nova consulta' }}{% endblock %}
+{% block conteudo %}
+<h1>{{ 'Editar consulta' if consulta_id else 'Nova consulta' }}</h1>
+{% if not pacientes or not dentistas %}
+  <p class="aviso">Cadastre um <a href="{{ url_for('gestao.paciente_form') }}">paciente</a>
+    e um <a href="{{ url_for('gestao.dentistas') }}">dentista</a> antes de salvar a consulta.</p>
+{% endif %}
+<form class="formulario" method="post">
+  <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+  <label for="paciente_cpf">Paciente</label>
+  <select id="paciente_cpf" name="paciente_cpf" required>
+    <option value="">Selecione</option>
+    {% for p in pacientes %}
+      <option value="{{ p.id_CPF }}"{% if dados.get('paciente_cpf') == p.id_CPF %} selected{% endif %}>
+        {{ p.nome }} · {{ p.id_CPF }}
+      </option>
+    {% endfor %}
+  </select>
+  <label for="dentista_id">Dentista</label>
+  <select id="dentista_id" name="dentista_id" required>
+    <option value="">Selecione</option>
+    {% for d in dentistas %}
+      <option value="{{ d.id }}"{% if dados.get('dentista_id') | string == d.id | string %} selected{% endif %}>
+        {{ d.nome }} · {{ d.cro }}
+      </option>
+    {% endfor %}
+  </select>
+  <label for="data_consulta">Data</label>
+  <input id="data_consulta" name="data_consulta" type="date" value="{{ dados.get('data_consulta') or '' }}" required>
+  <label for="horario">Horário</label>
+  {% set horario = dados.get('horario') %}
+  <input id="horario" name="horario" type="time" value="{% if horario is string %}{{ horario }}{% elif horario is not none %}{{ horario | hora }}{% endif %}" required>
+  <label for="status">Situação</label>
+  <select id="status" name="status">
+    {% for item in status %}
+      <option{% if dados.get('status') == item %} selected{% endif %}>{{ item }}</option>
+    {% endfor %}
+  </select>
+  <label for="descricao">Descrição</label>
+  <textarea id="descricao" name="descricao" maxlength="1000" rows="3">{{ dados.get('descricao') or '' }}</textarea>
+  <div class="botoes">
+    <button type="submit"{% if not pacientes or not dentistas %} disabled{% endif %}>Salvar consulta</button>
+    <a href="{{ url_for('gestao.consultas') }}">Voltar</a>
+  </div>
+</form>
+{% endblock %}

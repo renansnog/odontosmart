@@ -1,49 +1,46 @@
-from conexao import conectar
+from conexao import banco
 
-# Inserir paciente
-def inserir_paciente(id_CPF, nome, endereco, telefone, data_nasc, pcd):
-    conn = conectar()
-    cursor = conn.cursor()
-    sql = """
-        INSERT INTO pacientes (id_CPF, nome, endereco, telefone, data_de_nascimento, pcd)
-        VALUES (%s, %s, %s, %s, %s, %s)
-    """
-    valores = (id_CPF, nome, endereco, telefone, data_nasc, pcd)
-    cursor.execute(sql, valores)
-    conn.commit()
-    print(f"✅ Paciente {nome} inserido com sucesso!")
-    conn.close()
 
-# Buscar pacientes
-def listar_pacientes():
-    conn = conectar()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM pacientes")
-    resultados = cursor.fetchall()
-    for paciente in resultados:
-        print(paciente)
-    conn.close()
+def consultar(sql, parametros=()):
+    with banco().cursor(dictionary=True) as cursor:
+        cursor.execute(sql, parametros)
+        return cursor.fetchall()
 
-# Inserir consulta
-def inserir_consulta(data_consulta, horario, descricao):
-    conn = conectar()
-    cursor = conn.cursor()
-    sql = """
-        INSERT INTO consultas (data_consulta, horario, descricao)
-        VALUES (%s, %s, %s)
-    """
-    valores = (data_consulta, horario, descricao)
-    cursor.execute(sql, valores)
-    conn.commit()
-    print("✅ Consulta inserida com sucesso!")
-    conn.close()
 
-# Buscar consultas
+def buscar(sql, parametros=()):
+    registros = consultar(sql, parametros)
+    return next(iter(registros), None)
+
+
+def gravar(sql, parametros=()):
+    conexao = banco()
+    try:
+        with conexao.cursor() as cursor:
+            cursor.execute(sql, parametros)
+            afetados = cursor.rowcount
+        conexao.commit()
+        return afetados
+    except Exception:
+        conexao.rollback()
+        raise
+
+
+def listar_pacientes(termo=""):
+    return consultar(
+        "SELECT * FROM pacientes WHERE LOCATE(%s, nome) > 0 "
+        "OR LOCATE(%s, id_CPF) > 0 ORDER BY nome, id_CPF",
+        (termo, termo),
+    )
+
+
 def listar_consultas():
-    conn = conectar()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM consultas")
-    resultados = cursor.fetchall()
-    for consulta in resultados:
-        print(consulta)
-    conn.close()
+    return consultar(
+        "SELECT c.*, p.nome AS paciente, d.nome AS dentista "
+        "FROM consultas c LEFT JOIN pacientes p ON c.paciente_cpf = p.id_CPF "
+        "LEFT JOIN dentistas d ON c.dentista_id = d.id "
+        "ORDER BY c.data_consulta DESC, c.horario DESC, c.id_Consulta DESC"
+    )
+
+
+def listar_dentistas():
+    return consultar("SELECT id, nome, cro FROM dentistas ORDER BY nome, id")
