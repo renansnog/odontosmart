@@ -66,3 +66,16 @@ Faça backup, pare o aplicativo e execute **uma vez** `4_DATABASE/migrar_0_para_
 ## Documentação comprobatória
 
 Consulte [a descrição técnica e as evidências](docs/descricao-tecnica.md).
+
+## Validação automatizada local — 25/11/2026
+
+No Windows, com Python 3.14.7 e Pytest 9.2.0, o responsável executou `python -m pytest -v`: **10 passed in 4.97s**. O acesso ao painel administrativo também foi confirmado manualmente no navegador. A suíte `test_clinica.py` verifica site, MySQL, autenticação, controle de acesso, CSRF, pacientes, dentistas, consultas e conflitos de horário.
+
+Para reproduzir no PowerShell, em banco de demonstração:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install pytest
+.\.venv\Scripts\python.exe -m pytest -v
+```
+
+A evidência é a execução local registrada pelo responsável. Não constitui auditoria de segurança, conformidade LGPD ou homologação para produção. Utilize dados fictícios e renove credenciais expostas antes de qualquer implantação.
