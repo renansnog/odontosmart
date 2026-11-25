@@ -20,7 +20,7 @@ A área administrativa exige sessão assinada pelo Flask. Os formulários de alt
 
 | Origem | Contribuição |
 |---|---|
-| Desenvolvimento anterior de Renan Silva Nogueira | Site institucional em HTML, CSS e JavaScript, identidade visual, fotos, ampliação da foto da fachada e estrutura original de diretórios. O repositório também já trazia a primeira tela de login, um endpoint Flask de autenticação, scripts Python de acesso ao MySQL e o esquema inicial. O [commit anterior ao MVP](https://github.com/renansnog/clinica_oblanco/commit/5004031eb7618b8d1edc0895b8d690c2f1866db8) registra esse ponto de partida. |
+| Desenvolvimento anterior de Renan Silva Nogueira | Site institucional em HTML, CSS e JavaScript, identidade visual, fotos, ampliação da foto da fachada e estrutura original de diretórios. O repositório também já trazia a primeira tela de login, um endpoint Flask de autenticação, scripts Python de acesso ao MySQL e o esquema inicial. O [commit anterior ao MVP](https://github.com/renansnog/odontosmart/commit/5004031eb7618b8d1edc0895b8d690c2f1866db8) registra esse ponto de partida. |
 | Desenvolvimento da versão 1.0.0 com auxílio de IA (Codex) | Integração do site ao Flask, correção do botão de contato, substituição do login de protótipo, sessões protegidas, painel, fluxos de pacientes, agenda e cadastro de dentistas. Inclui configuração por ambiente, migração preservando os dados do esquema anterior, execução dos testes e produção da documentação e das capturas. |
 
 ## Evidências de funcionamento
@@ -71,3 +71,7 @@ O projeto passou a utilizar a marca OdontoSmart em 25/11/2026, preservando a ori
 ## Revalidação da mudança de nome — 25/11/2026
 
 O responsável registrou **10 testes aprovados em 5,60 s** após a primeira alteração de nome. Após a atualização visual posterior, confirmou o funcionamento no navegador; a suíte ainda precisa ser reexecutada nessa revisão final. Os registros anteriores permanecem como evidência histórica.
+
+## Publicação da versão 1.0.0
+
+[Release v1.0.0](https://github.com/renansnog/odontosmart/releases/tag/v1.0.0) — publicação como pre-release confirmada pelo responsável em 25/11/2026. MVP de demonstração local, não homologado para produção.
