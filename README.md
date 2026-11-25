@@ -30,7 +30,7 @@ Pré-requisitos: Git, Python 3.12 e MySQL Server 8.4 em execução. O MySQL Work
 1. Clone o repositório e instale as dependências no PowerShell.
 
    ```powershell
-   git clone https://github.com/renansnog/clinica_oblanco.git
+   git clone https://github.com/renansnog/odontosmart.git
    cd clinica_oblanco
    py -3.12 -m venv .venv
    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
@@ -89,3 +89,7 @@ Identidade visual: símbolo vetorial próprio, paleta azul-petróleo e verde-azu
 ## Revalidação da mudança de nome — 25/11/2026
 
 O responsável registrou **10 testes aprovados em 5,60 s** após a primeira alteração de nome. Após a atualização visual posterior, confirmou o funcionamento no navegador; a suíte ainda precisa ser reexecutada nessa revisão final. Os registros anteriores permanecem como evidência histórica.
+
+## Publicação da versão 1.0.0
+
+[Release v1.0.0](https://github.com/renansnog/odontosmart/releases/tag/v1.0.0) — publicação como pre-release confirmada pelo responsável em 25/11/2026. MVP de demonstração local, não homologado para produção.
