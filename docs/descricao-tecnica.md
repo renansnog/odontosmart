@@ -2,7 +2,7 @@
 
 | Campo | Informação |
 |---|---|
-| Software | Clínica O’Blanco Odontologia Moderna |
+| Software | OdontoSmart |
 | Versão | 1.0.0 (MVP) |
 | Projeto original | Renan Silva Nogueira |
 | Validação | 24 de novembro de 2026 |
@@ -63,3 +63,7 @@ Para reproduzir no PowerShell, em banco de demonstração:
 ```
 
 A evidência é a execução local registrada pelo responsável. Não constitui auditoria de segurança, conformidade LGPD ou homologação para produção. Utilize dados fictícios e renove credenciais expostas antes de qualquer implantação.
+
+## Evolução da identidade
+
+O projeto passou a utilizar a marca OdontoSmart em 25/11/2026, preservando a origem histórica na Clínica O’Blanco. A validação registrada acima antecede a mudança de marca.
