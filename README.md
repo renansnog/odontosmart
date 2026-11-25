@@ -4,7 +4,7 @@ Sistema web de gestão odontológica, versão **1.0.0 (MVP)**, com site instituc
 
 ## Funcionalidades
 
-- Site institucional com a identidade visual, as fotos e as seções do projeto original.
+- Página de apresentação com identidade visual OdontoSmart.
 - Login e saída administrativos, senha armazenada como hash e formulários protegidos contra CSRF.
 - Cadastro, busca por nome ou CPF, edição e exclusão de pacientes. A exclusão exige resolver primeiro as consultas vinculadas.
 - Cadastro, listagem, edição e exclusão de consultas, vinculadas a paciente e dentista. A situação pode ser agendada, realizada ou cancelada. O sistema impede consultas ativas para o mesmo dentista na mesma data e hora.
@@ -17,7 +17,7 @@ HTML, CSS e JavaScript no site, HTML gerado com Jinja na administração, Python
 
 | Pasta | Responsabilidade |
 |---|---|
-| `1_FRONTEND` | Site institucional, estilos e fotografias servidos pelo Flask |
+| `1_FRONTEND` | Página de apresentação, estilos e recursos estáticos servidos pelo Flask |
 | `2_ADM` | Páginas administrativas renderizadas pelo Flask |
 | `3_BACKEND` | Rotas, autenticação, regras de cadastro e acesso ao banco |
 | `4_DATABASE` | Estrutura inicial do MySQL e migração da estrutura anterior |
@@ -85,3 +85,7 @@ A evidência é a execução local registrada pelo responsável. Não constitui 
 OdontoSmart é o novo nome do projeto originalmente desenvolvido como Clínica O’Blanco. O nome técnico do banco, a pasta e a URL do repositório permanecem inalterados para preservar a compatibilidade. A validação anterior antecede a mudança de marca; execute novamente a suíte após atualizar o projeto.
 
 Identidade visual: símbolo vetorial próprio, paleta azul-petróleo e verde-azulado, página de apresentação responsiva e painel administrativo integrado. A marca não foi pesquisada para fins de registro comercial.
+
+## Revalidação da mudança de nome — 25/11/2026
+
+O responsável registrou **10 testes aprovados em 5,60 s** após a primeira alteração de nome. Após a atualização visual posterior, confirmou o funcionamento no navegador; a suíte ainda precisa ser reexecutada nessa revisão final. Os registros anteriores permanecem como evidência histórica.
