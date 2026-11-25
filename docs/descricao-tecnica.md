@@ -67,3 +67,7 @@ A evidência é a execução local registrada pelo responsável. Não constitui 
 ## Evolução da identidade
 
 O projeto passou a utilizar a marca OdontoSmart em 25/11/2026, preservando a origem histórica na Clínica O’Blanco. A validação registrada acima antecede a mudança de marca.
+
+## Revalidação da mudança de nome — 25/11/2026
+
+O responsável registrou **10 testes aprovados em 5,60 s** após a primeira alteração de nome. Após a atualização visual posterior, confirmou o funcionamento no navegador; a suíte ainda precisa ser reexecutada nessa revisão final. Os registros anteriores permanecem como evidência histórica.
