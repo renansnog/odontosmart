@@ -1,4 +1,4 @@
-# Clínica O’Blanco Odontologia Moderna
+# OdontoSmart — Sistema Web de Gestão Odontológica
 
 Sistema web de gestão odontológica, versão **1.0.0 (MVP)**, com site institucional e área administrativa para o gerenciamento de pacientes, consultas e dentistas. Projeto de portfólio desenvolvido por **Renan Silva Nogueira**. Use exclusivamente dados fictícios na demonstração.
 
@@ -79,3 +79,7 @@ Para reproduzir no PowerShell, em banco de demonstração:
 ```
 
 A evidência é a execução local registrada pelo responsável. Não constitui auditoria de segurança, conformidade LGPD ou homologação para produção. Utilize dados fictícios e renove credenciais expostas antes de qualquer implantação.
+
+## Identidade do projeto
+
+OdontoSmart é o novo nome do projeto originalmente desenvolvido como Clínica O’Blanco. O nome técnico do banco, a pasta e a URL do repositório permanecem inalterados para preservar a compatibilidade. A validação anterior antecede a mudança de marca; execute novamente a suíte após atualizar o projeto.
