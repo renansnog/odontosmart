@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block titulo %}{% endblock %} | OdontoSmart</title>
+  <link rel="icon" href="/img/odontosmart.svg">
   <link rel="stylesheet" href="{{ url_for('css_admin', arquivo='admin.css') }}">
   {% block estilos %}{% endblock %}
 </head>
 <body>
   <header class="topo">
     <div class="largura navegacao">
-      <a class="marca" href="{{ url_for('institucional') }}">OdontoSmart</a>
+      <a class="marca" href="{{ url_for('institucional') }}"><img src="/img/odontosmart.svg" alt="" width="36" height="36">OdontoSmart</a>
       {% if g.admin %}
       <nav aria-label="Administração">
         <a href="{{ url_for('painel') }}">Painel</a>
