@@ -211,3 +211,6 @@ footer {
 #fachada {
   transition: transform 0.3s ease;
 }
+
+/* Identidade OdontoSmart */
+body{background:#f1f7f7;color:#17343d} header,footer{background:#12343e} header h1{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px}.banner{background:linear-gradient(125deg,#12343e,#087f83);padding:96px 20px}.banner .eyebrow{color:#a7f3d0;font-size:.85rem;letter-spacing:.12em;font-weight:bold}.banner .btn{color:#075e63;box-shadow:none}.banner .btn:hover{background:#d5f5ef;color:#12343e;box-shadow:none}section h2{color:#075e63}.recursos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}.recursos article{background:white;border:1px solid #c9dfdf;border-radius:14px;padding:24px}.recursos h3{color:#075e63;margin-bottom:10px}@media(max-width:700px){header .container{flex-direction:column;gap:16px}nav ul{flex-wrap:wrap;justify-content:center;gap:12px}.banner{padding:60px 16px}}
