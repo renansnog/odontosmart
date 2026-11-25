@@ -1,0 +1,10 @@
+MySQL 8.4.13
+PASS administrador criado via CLI com hash scrypt no MySQL
+PASS migração do schema original: vínculo único migrado e vínculos ambíguos preservados
+PASS Chromium 156.0.8078.79: site e zoom originais, login, navegação, telas responsivas e saída
+PASS site institucional, rotas protegidas, senha incorreta, sessão válida e CSRF
+PASS pacientes: entrada inválida, cadastro, duplicidade, busca por nome/CPF, edição e exclusão
+PASS dentistas: cadastro, listagem e bloqueio de CRO duplicado
+PASS consultas: cadastro, listagem, edição, cancelamento, exclusão, conflito de agenda e integridade dos vínculos
+PASS saída bloqueia novo acesso administrativo sem login
+PASS dados e exclusões persistem após reiniciar o processo Flask e abrir nova sessão
